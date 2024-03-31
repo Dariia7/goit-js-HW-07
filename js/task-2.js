@@ -1,27 +1,22 @@
 const images = [
   {
-    url: "https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    url: "https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?dpr=2&h=750&w=1260",
     alt: "White and Black Long Fur Cat",
   },
   {
-    url: "https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    url: "https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?dpr=2&h=750&w=1260",
     alt: "Orange and White Koi Fish Near Yellow Koi Fish",
   },
   {
-    url: "https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    url: "https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?dpr=2&h=750&w=1260",
     alt: "Group of Horses Running",
   },
 ];
+
 const gal = document.querySelector("ul.gallery");
 
-const count = 3;
-for (let i = 0; i < count; i++) {
-  const liEl = document.createElement("li");
-  const img = document.createElement("img");
-  img.src = images[i].url;
-  img.alt = images[i].alt;
+const markup = images
+  .map((image) => `<li class="list-item new"><img src="${image.url}" /></li>`)
+  .join("");
 
-  liEl.appendChild(img);
-
-  gal.appendChild(liEl);
-}
+gal.insertAdjacentHTML("beforeend", markup);

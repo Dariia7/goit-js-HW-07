@@ -31,12 +31,16 @@ createDivBtn.addEventListener("click", () => {
         .padStart(6, 0)}`;
     }
 
+    // очищення поля вводу після створення дів
+    constInput.value = "";
+
+    createDivBtn.addEventListener("click", () => {
+      newDiv.remove();
+    });
+
     const destroy = document.querySelector(".destroyBtn");
     destroy.addEventListener("click", () => {
       newDiv.remove();
     });
   }
-
-  // очищення поля вводу після створення дів
-  constInput.value = "";
 });
